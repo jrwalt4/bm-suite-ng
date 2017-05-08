@@ -1,5 +1,5 @@
 import * as BmActions from './bm-actions'
-import {BmActionType} from './bm-action-types'
+import * as BmActionType from './bm-action-types'
 
 let initialState = {
   tests:[],

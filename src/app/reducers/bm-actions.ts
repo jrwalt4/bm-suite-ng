@@ -1,4 +1,4 @@
-import { BmActionType } from './bm-action-types'
+import * as BmActionType from './bm-action-types'
 
 //export namespace BmActions {
 export function addTest(testData={}) {
