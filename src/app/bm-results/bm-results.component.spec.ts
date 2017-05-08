@@ -1,5 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { Store, StoreModule } from '@ngrx/store'
+
+import { Subject } from 'rxjs'
+
 import { BmResultsComponent } from './bm-results.component';
 
 describe('BmResultsComponent', () => {
@@ -7,10 +11,20 @@ describe('BmResultsComponent', () => {
   let fixture: ComponentFixture<BmResultsComponent>;
 
   beforeEach(async(() => {
+    let s = new Subject;
     TestBed.configureTestingModule({
-      declarations: [ BmResultsComponent ]
-    })
-    .compileComponents();
+      declarations: [BmResultsComponent],
+      providers: [
+        {
+          provide: Store,
+          useValue: {
+            select(store: string) {
+
+            }
+          }
+        }
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

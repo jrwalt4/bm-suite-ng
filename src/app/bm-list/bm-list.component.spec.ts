@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import {Store} from '@ngrx/store'
+
 import { BmListComponent } from './bm-list.component';
 
 describe('BmListComponent', () => {
@@ -8,7 +10,17 @@ describe('BmListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BmListComponent ]
+      declarations: [ BmListComponent ],
+      providers:[
+        {
+          provide:Store,
+          useValue:{
+            select(store:string) {
+
+            }
+          }
+        }
+      ]
     })
     .compileComponents();
   }));

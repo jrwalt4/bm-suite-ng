@@ -1,13 +1,27 @@
 import { TestBed, async } from '@angular/core/testing';
 
+import {Store} from '@ngrx/store'
+
 import { AppComponent } from './app.component';
+import { BmListComponent } from './bm-list/bm-list.component'
+import { BmResultsComponent } from './bm-results/bm-results.component'
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        BmResultsComponent,
+        BmListComponent
       ],
+      providers:[
+        {
+          provide:Store,
+          useValue:{
+            select(s:string){}
+          }
+        }
+      ]
     }).compileComponents();
   }));
 
